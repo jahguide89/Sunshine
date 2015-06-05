@@ -20,12 +20,13 @@ public class DetailActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rooView = inflater.inflate(R.layout.fragment_detail, container, false);
+
         Intent intent = getActivity().getIntent();
-        View rooView = inflater.inflate(R.layout.fragment_detail,container,false);
         if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
             String forecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-            ((TextView)rooView.findViewById(R.id.detail_text)).setText(forecastStr);
+            ((TextView) rooView.findViewById(R.id.detail_text)).setText(forecastStr);
         }
-        return inflater.inflate(R.layout.fragment_detail, container, false);
+        return rooView;
     }
 }
